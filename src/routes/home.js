@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { ensureAuthenticated } = require('../config/auth');
+const { selfAction } = require('../config/self');
 const Contact = require('../models/Contact');
 
 router.get('/home', ensureAuthenticated, (req, res) => {
@@ -59,7 +60,7 @@ router.post('/home/add', (req, res) => {
 });
 
 // DELETE USER
-router.get('/home/delete/:id', ensureAuthenticated, (req, res) => {
+router.get('/home/delete/:id', ensureAuthenticated, selfAction, (req, res) => {
     const { id } = req.params;
     Contact.destroy({ where: { id: id } });
     Contact.findAll({ where: { userid: req.user.id } })
@@ -72,7 +73,7 @@ router.get('/home/delete/:id', ensureAuthenticated, (req, res) => {
 
 // EDIT USER
 
-router.get('/home/edit/:id', ensureAuthenticated, (req, res) => {
+router.get('/home/edit/:id', ensureAuthenticated, selfAction, (req, res) => {
     const { id } = req.params;
     Contact.findOne({ where: { id: id } })
         .then(contact => {
