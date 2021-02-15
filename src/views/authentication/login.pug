@@ -1,0 +1,21 @@
+extends ../partials/nav 
+block main
+    <main class="index">
+        div.center
+            <form class="form space-down" method="POST">
+                div.title
+                    h1 LOGIN 
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    input(type="text", class="form-control", id="username", placeholder="Enter username", name="username", value=username)
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    input(type="password", class="form-control", id="exampleInputPassword1", placeholder="Password", name="password", value=password)
+                </div>
+                include ../partials/messages
+                div.button-container
+                    <button type="submit" class="btn btn-primary btn-dark space">Login</button>
+                    a(href="/sing-up" class="btn btn-primary start-button btn-dark") Sing Up
+            </form>
+    </main>

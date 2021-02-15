@@ -1,0 +1,24 @@
+extends ../partials/home-nav 
+block main
+    main.main-home
+        div.center    
+            <div class="container p-3">
+            <div class="row">
+                <div class="col-md-auto mx-auto">
+                <div class="card text-center bg-dark space-down">
+                    <div class="card-body">
+                    h3= `Welcome ${fullname}`
+                    h4.font-italic= `${username}`
+                    <a href="home/contacts" class="btn btn-primary m-3">
+                        See All Contacts
+                    </a>
+                    <a href="home/add" class="btn btn-primary m-3">
+                        Add New Contact
+                    </a>
+                    </div>
+                    div.card-body.logout-div 
+                        a(href="/logout", class="btn btn-primary logout") Logout 
+                </div>
+                </div>
+            </div>
+            </div>

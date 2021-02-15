@@ -1,0 +1,12 @@
+if errors 
+    each err in errors 
+        div.alert.alert-warning= err.msg
+
+if success_msg != ''
+    div.alert.alert-success= success_msg
+
+if error_msg  != ''
+    div.alert.alert-warning= error_msg
+
+if error != ''
+    div.alert.alert-danger= error

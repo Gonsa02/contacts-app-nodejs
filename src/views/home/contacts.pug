@@ -1,0 +1,26 @@
+extends ../partials/home-nav 
+block main
+    main.main-home
+        div.container.space-up
+            include ../partials/messages
+                div.row.row-cols-2
+                    each contact in contacts
+                        <div class="col-md-4 mb-3">
+                            <div class="card text-center bg-dark">
+                                <div class="card-body">
+                                    h3.card-title.text-capitalize= contact.name 
+                                    p.m-2= contact.phone
+                                    a(href="/home/edit/"+contact.id, class="btn btn-secondary mb-2") Edit Contact
+                                    a(href="/home/delete/"+contact.id , class="btn btn-danger mb-2") Delete Contact
+                                </div>
+                            </div>
+                        </div>
+                    else 
+                        <div class="col-md-4 mx-auto not-contacts">
+                            <div class="card card-body text-center bg-dark space-down">
+                                <p>No contacts saved yet</p>
+                                <a href="/home/add" class="btn btn-primary m-3">Add One!</a>
+                            </div>
+                        </div>                        
+
+            

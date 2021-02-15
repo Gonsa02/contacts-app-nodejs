@@ -1,0 +1,20 @@
+extends ../partials/home-nav 
+block main
+    main.main-home
+        div.center
+            <form class="form add-form space-up" method="POST">
+                div.title
+                    h1 EDIT CONTACT
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    input(type="text", class="form-control", id="name", placeholder="Enter name", name="name", value=contact.name)
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    input(type="text", class="form-control", id="phone", placeholder="Phone Number", name="phone", value=contact.phone)
+                </div>
+                include ../partials/messages
+                div.button-container
+                    <button type="submit" class="btn btn-primary btn-color space">Edit Contact</button>
+                    a(href="/home/contacts" class="btn btn-primary start-button") Go Back
+            </form>
