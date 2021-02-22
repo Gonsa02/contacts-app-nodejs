@@ -12,4 +12,4 @@ node src/app.js
 
 ## Database
 
-Copy SQL from **/database/ContactsApp.sql** and modify your keys in **/src/db/keys.js++
+Copy SQL from **/database/ContactsApp.sql** and modify your keys in **/src/db/keys.js**
