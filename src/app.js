@@ -56,3 +56,4 @@ app.use(passport.session());
 app.use(require('./routes/'));
 app.use(require('./routes/authentication'));
 app.use(require('./routes/home'));
+app.use(require('./routes/api'));
